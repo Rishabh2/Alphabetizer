@@ -1,6 +1,6 @@
 function test() {
-  const inputText = document.getElementById("inputs").innerHTML;
+  const inputText = document.getElementById("inputs").value;
   //const testText = document.getElementById("output").value;
   //alert(testText);
-  document.getElementById("output").value = inputText;
+  document.getElementById("output").innerHTML = inputText;
 }
