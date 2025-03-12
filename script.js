@@ -2,5 +2,5 @@ function test() {
   const inputText = document.getElementById("inputs").value;
   //const testText = document.getElementById("output").value;
   //alert(testText);
-  document.getElementById("output").innerHTML = inputText;
+  document.getElementById("output").textContent = inputText;
 }
