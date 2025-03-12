@@ -4,5 +4,5 @@ function alphabetize() {
   const itemList = inputText.toString().split(String.fromCharCode(10));
   itemList.sort();
   //alert(itemList[0]);
-  document.getElementById("output").textContent = inputText.toString().raw();
+  document.getElementById("output").textContent = String().raw(inputText.toString());
 }
