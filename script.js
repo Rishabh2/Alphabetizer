@@ -1,6 +1,6 @@
-function test() {
+function alphabetize() {
   const inputText = document.getElementById("inputs").value;
-  //const testText = document.getElementById("output").value;
-  //alert(testText);
+  const itemList = inputText.split(/\n?\r/);
+  alert(itemList.length);
   document.getElementById("output").textContent = inputText;
 }
