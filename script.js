@@ -14,8 +14,8 @@ function alphabetize() {
   sortedUpperCase.forEach(alphabetizeWord);
   function alphabetizeWord(item, index, arr) {
   	const letters = arr[index].split("");
-    letters.sort();
     const spaceLessLetters = letters.filter((letter) => letter != " ");
+    spaceLessLetters.sort();
     const abcString = spaceLessLetters.join("");
     sortedUpperCase[index] = abcString;
   }
