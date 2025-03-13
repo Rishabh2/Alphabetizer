@@ -3,19 +3,22 @@ function alphabetize() {
   //alert(inputText.raw());
   const itemList = inputText.toString().split(String.fromCharCode(10));
   const itemMap = new Map();
-  itemList.forEach(alphabetizeWord);
+  itemList.forEach(sortWords)
+  function sortWords(item, index, arr) {
+  	const upperCasedWord = arr[index].toUpperCase();
+    itemMap.set(upperCasedWord, arr[index]);
+  }
+  const sortedList = new Map([...itemMap.entries()].sort());
+  const sortedUpperCase = Array.from(sortedList.keys());
+  const sortedOriginal = Array.from(sortedList.values());
+  sortedUpperCase.forEach(alphabetizeWord);
   function alphabetizeWord(item, index, arr) {
   	const letters = arr[index].toUpperCase().split("");
     letters.sort();
     //letters.push("\n");
     const abcString = letters.join("");
-    itemMap.set(arr[index], abcString);
+    sortedUpperCase[index] = abcString;
   }
-  const sortedList = new Map([...itemMap.entries()].sort());
-  itemList.sort();
-  //alert(itemList[0]);
-  const finalList = Array.from(sortedList.values());
-  const finalList2 = Array.from(sortedList.keys());
-  document.getElementById("output").textContent = finalList.join("\n");
-  document.getElementById("output2").textContent = finalList2.join("\n");
+  document.getElementById("output").textContent = sortedUpperCase.join("\n");
+  document.getElementById("output2").textContent = sortedOriginal.join("\n");
 }
