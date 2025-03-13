@@ -1,12 +1,11 @@
 function alphabetize() {
   const inputText = document.getElementById("inputs").value;
-  //alert(inputText.raw());
   const itemList = inputText.toString().split(String.fromCharCode(10));
   const itemMap = new Map();
   itemList.forEach(sortWords)
   function sortWords(item, index, arr) {
   	const upperCasedWord = arr[index].toUpperCase();
-    const upperCaseLetters = arr[index].split("");
+    const upperCaseLetters = upperCasedWord.split("");
     const spaceLessUpperCaseLetters = upperCaseLetters.filter((letter) => letter != " ");
     const spacelessWord = spaceLessUpperCaseLetters.join("");
     itemMap.set(spacelessWord, arr[index]);
