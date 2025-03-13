@@ -13,10 +13,10 @@ function alphabetize() {
   const sortedOriginal = Array.from(sortedList.values());
   sortedUpperCase.forEach(alphabetizeWord);
   function alphabetizeWord(item, index, arr) {
-  	const letters = arr[index].toUpperCase().split("");
+  	const letters = arr[index].split("");
     letters.sort();
-    //letters.push("\n");
-    const abcString = letters.join("");
+    const spaceLessLetters = letters.filter((letter) => letter != " ");
+    const abcString = spaceLessLetters.join("");
     sortedUpperCase[index] = abcString;
   }
   document.getElementById("output").textContent = sortedUpperCase.join("\n");
