@@ -24,3 +24,8 @@ function alphabetize() {
   document.getElementById("output").textContent = sortedUpperCase.join("\n");
   document.getElementById("output2").textContent = sortedOriginal.join("\n");
 }
+
+function copyText() {
+  const sorted = document.getElementById("output");
+  navigator.clipboard.writeText(sorted.textContent);
+}
